@@ -9,6 +9,34 @@ Tested to work on Linux, OSX, IRIX, and Windows under WSL.
 Loosely based on [pyHS100](https://github.com/GadgetReactor/pyHS100) and
 [research from softScheck](https://www.softscheck.com/en/reverse-engineering-tp-link-hs110/).
 
+## Antony's quick start instruction
+
+To compile,
+
+```bash
+meson build
+cd build
+ninja
+```
+
+Then, discover the smartplug by
+```bash
+bash ../discover.sh
+```
+
+And then probe the smart plug for info
+```bash
+cd build/
+./hs100 [smartplug ip address] info
+```
+
+To install, type
+```bash
+cd build
+ninja install
+```
+If prompted, select the admin account and then type password.
+
 ## Usage
 
 `hs100 <ip> <command>`
